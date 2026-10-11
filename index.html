@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Love 🌿</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  --green: #234d38;
+  --light: #f5f5e9;
+  --pink: #ffc4d6;
+  --gold: #ffda83;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--green);
+  font-family: 'DM Sans', sans-serif;
+  background: var(--light);
+  overflow-x: hidden;
+}
+button { font: inherit; cursor: pointer; }
+
+.hero {
+  min-height: 100vh;
+  padding: 30px 20px 55px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 15% 15%, #fff8d7 0%, transparent 30%),
+    radial-gradient(ellipse at 90% 75%, #c7dfb9 0%, transparent 35%),
+    linear-gradient(160deg, #e7f0d9, #f9f3df 55%, #d8e8cd);
+}
+.top-note {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border: 1px solid #91ad8c;
+  padding: 10px 17px;
+  border-radius: 50px;
+  margin-bottom: 25px;
+}
+h1, h2, .serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+h1 {
+  font-size: clamp(54px, 12vw, 104px);
+  line-height: 1;
+  margin: 0;
+  color: #244c35;
+}
+h1 span { color: #b77780; font-style: italic; }
+.subtitle {
+  max-width: 450px;
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 22px auto;
+  color: #536a50;
+}
+.flower {
+  position: absolute;
+  font-size: 34px;
+  animation: sway 4s ease-in-out infinite;
+  pointer-events: none;
+}
+.f1 { top: 13%; left: 8%; }
+.f2 { top: 25%; right: 9%; animation-delay: -2s; }
+.f3 { bottom: 13%; left: 13%; animation-delay: -1s; }
+.f4 { bottom: 18%; right: 12%; animation-delay: -3s; }
+@keyframes sway {
+  0%,100% { transform: rotate(-10deg) translateY(0); }
+  50% { transform: rotate(10deg) translateY(-12px); }
+}
+.date {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin: 5px 0 28px;
+}
+.primary, .secondary {
+  border: 0;
+  border-radius: 50px;
+  padding: 15px 25px;
+  transition: .2s;
+}
+.primary {
+  background: var(--green);
+  color: white;
+  box-shadow: 0 7px 0 #163b29;
+}
+.primary:hover { transform: translateY(-3px); }
+.primary:active { transform: translateY(2px); box-shadow: none; }
+.scroll-note { margin-top: 30px; font-size: 12px; opacity: .7; }
+
+section { padding: 75px 20px; text-align: center; }
+.section-tag {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #9b7272;
+}
+h2 { font-size: clamp(30px, 6vw, 47px); margin: 12px 0; }
+.intro { max-width: 520px; margin: 0 auto 35px; line-height: 1.9; color: #647260; }
+
+.cake-section {
+  background: #fffaf0;
+  min-height: 610px;
+}
+.cake-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 270px;
+  margin: 15px auto;
+}
+.cake {
+  position: relative;
+  width: 210px;
+  height: 190px;
+  cursor: pointer;
+  transition: transform .3s;
+  filter: drop-shadow(0 14px 9px #5b49331b);
+}
+.cake:hover { transform: scale(1.04); }
+.plate {
+  position: absolute;
+  width: 245px;
+  height: 18px;
+  bottom: 2px;
+  left: -18px;
+  border-radius: 50%;
+  background: #d8d6bf;
+  border-bottom: 4px solid #c2c0a7;
+}
+.cake-bottom {
+  position: absolute;
+  bottom: 18px;
+  height: 75px;
+  width: 210px;
+  border-radius: 8px 8px 15px 15px;
+  background: repeating-linear-gradient(0deg,#c47a63 0 12px,#f6d7b0 12px 24px);
+  border: 3px solid #f9e9cc;
+}
+.cake-top {
+  position: absolute;
+  z-index: 2;
+  width: 210px;
+  height: 43px;
+  bottom: 78px;
+  background: #fff0da;
+  border-radius: 50%;
+  border: 3px solid #f4c4c2;
+}
+.icing {
+  position: absolute;
+  bottom: 63px;
+  z-index: 3;
+  height: 28px;
+  width: 210px;
+  background: #f7c3cb;
+  border-radius: 4px 4px 22px 22px;
+}
+.icing::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 22px;
+  top: -10px;
+  border-radius: 50%;
+  background: #ffd9dc;
+}
+.drip {
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  width: 15px;
+  height: 23px;
+  border-radius: 0 0 10px 10px;
+  background: #ffd9dc;
+}
+.d1 { left: 35px; height: 30px; }
+.d2 { left: 82px; height: 19px; }
+.d3 { right: 39px; height: 27px; }
+.candle {
+  position: absolute;
+  bottom: 118px;
+  left: 99px;
+  width: 12px;
+  height: 45px;
+  border-radius: 4px 4px 0 0;
+  z-index: 5;
+  background: repeating-linear-gradient(135deg,#fff 0 6px,#8cb69a 6px 12px);
+}
+.flame {
+  position: absolute;
+  top: -23px;
+  left: -2px;
+  width: 16px;
+  height: 23px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: #ffb33f;
+  box-shadow: 0 0 20px #ffc04c;
+  animation: flicker .7s infinite alternate;
+}
+@keyframes flicker {
+  to { transform: rotate(-40deg) scale(.82); }
+}
+.cake-cut {
+  animation: cakeCut .6s ease forwards;
+}
+@keyframes cakeCut {
+  to { transform: rotate(-8deg) translateX(-15px); opacity: .6; }
+}
+.cut-btn { margin-top: 14px; }
+.hint { font-size: 13px; color: #8c8979; margin-top: 20px; }
+
+.wishes {
+  background: #e5eddb;
+}
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+  gap: 17px;
+  max-width: 850px;
+  margin: 35px auto 0;
+  text-align: left;
+}
+.wish {
+  background: #fffcf4;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 6px 20px #304c3210;
+  transition: transform .2s;
+}
+.wish:hover { transform: translateY(-4px) rotate(-1deg); }
+.wish .emoji { font-size: 27px; }
+.wish p { line-height: 1.8; font-size: 14px; color: #66735f; }
+.wish strong { font-family: 'Playfair Display',serif; font-size: 18px; }
+
+.final {
+  background: #294b37;
+  color: #fff7e6;
+  padding: 75px 20px 45px;
+}
+.final h2 { color: #f8d9c8; }
+.final p { max-width: 480px; margin: 20px auto; line-height: 1.9; color: #e0e9d7; }
+.heart { color: #ffb9c8; }
+footer { font-size: 11px; opacity: .65; margin-top: 45px; letter-spacing: 1px; }
+
+/* Celebration */
+#celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+}
+#celebration.active { display: block; }
+.confetti {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 14px;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to { transform: translateY(115vh) rotate(1000deg); }
+}
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  font-size: 50px;
+  animation: floatUp 6s ease-in forwards;
+}
+@keyframes floatUp {
+  to { transform: translateY(-120vh) rotate(15deg); }
+}
+.popup {
+  position: fixed;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(.5);
+  opacity: 0;
+  width: min(90%,390px);
+  padding: 32px 25px;
+  border-radius: 25px;
+  text-align: center;
+  background: #fffaf0;
+  box-shadow: 0 20px 80px #152b1c55;
+  pointer-events: none;
+  transition: .4s;
+}
+.popup.show { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+.popup h2 { color: #345c3d; }
+.popup p { line-height: 1.8; color: #68745e; }
+.popup button { margin-top: 10px; }
+.hidden { display: none; }
+
+@media(max-width:480px) {
+  .flower { font-size: 25px; }
+  .cake { transform: scale(.9); }
+  .top-note { letter-spacing: 2px; }
+}
+</style>
+</head>
+<body>
+
+<div id="celebration"></div>
+
+<div class="popup" id="popup">
+  <div style="font-size:45px">🎉💚🎂</div>
+  <h2>Make a wish, Love!</h2>
+  <p id="popupWish">May your life always bloom with happiness, laughter, and beautiful little moments.</p>
+  <p>🌿 You deserve all the magic in the world. 🌿</p>
+  <button class="primary" onclick="closePopup()">One more hug 💚</button>
+</div>
+
+<header class="hero" id="home">
+  <span class="flower f1">🌼</span>
+  <span class="flower f2">🦋</span>
+  <span class="flower f3">🌿</span>
+  <span class="flower f4">🌷</span>
+
+  <div class="top-note">A little surprise, made with love</div>
+  <div style="font-size:38px;margin-bottom:15px">🌿 🦋 🌱</div>
+  <p class="date">12 OCTOBER · YOUR SPECIAL DAY</p>
+  <h1>Happy Birthday<br><span>Love!</span></h1>
+  <p class="subtitle">
+    To someone who loves nature and makes this world a little
+    more beautiful just by being in it. This little garden of
+    wishes is especially for you. 🌻
+  </p>
+  <button class="primary" onclick="document.getElementById('cakeSection').scrollIntoView({behavior:'smooth'})">
+    Your surprise awaits ↓
+  </button>
+  <div class="scroll-note">MADE ESPECIALLY FOR YOU ✿</div>
+</header>
+
+<section class="cake-section" id="cakeSection">
+  <div class="section-tag">The sweetest moment</div>
+  <h2>One little cake, a million wishes 🎂</h2>
+  <p class="intro">
+    Close your eyes, make your biggest wish, and get ready...
+    Because this cake comes with a little bit of MAGIC!
+  </p>
+
+  <div class="cake-wrap">
+    <div class="cake" id="cake" onclick="cutCake()" role="button" tabindex="0" aria-label="Cut your birthday cake">
+      <div class="plate"></div>
+      <div class="cake-bottom"></div>
+      <div class="cake-top"></div>
+      <div class="icing">
+        <span class="drip d1"></span>
+        <span class="drip d2"></span>
+        <span class="drip d3"></span>
+      </div>
+      <div class="candle"><div class="flame" id="flame"></div></div>
+    </div>
+  </div>
+  <button class="primary cut-btn" id="cutBtn" onclick="cutCake()">🔪 Cut the cake, Love!</button>
+  <p class="hint" id="hint">Psst... tap the cake or the button. Trust me. 😉</p>
+</section>
+
+<section class="wishes">
+  <div class="section-tag">Little notes for you</div>
+  <h2>Wishes that bloom 🌸</h2>
+  <p class="intro">A few tiny wishes for your brand-new trip around the sun.</p>
+
+  <div class="wish-grid">
+    <article class="wish">
+      <div class="emoji">🌻</div>
+      <strong>Grow & glow</strong>
+      <p>May you grow like the tallest tree and always find sunshine, even on cloudy days.</p>
+    </article>
+    <article class="wish">
+      <div class="emoji">🦋</div>
+      <strong>Beautiful changes</strong>
+      <p>May every new chapter bring you butterflies, adventures, and wonderful surprises.</p>
+    </article>
+    <article class="wish">
+      <div class="emoji">🌈</div>
+      <strong>Endless happiness</strong>
+      <p>May your bad days be short, your laughs be loud, and your happiest moments be many.</p>
+    </article>
+    <article class="wish">
+      <div class="emoji">🌳</div>
+      <strong>Stay wonderfully you</strong>
+      <p>Keep your kind heart, your beautiful soul, and your love for the little things.</p>
+    </article>
+    <article class="wish">
+      <div class="emoji">✨</div>
+      <strong>Dream big</strong>
+      <p>May the universe surprise you with things even more beautiful than your dreams.</p>
+    </article>
+    <article class="wish">
+      <div class="emoji">💚</div>
+      <strong>A wish from your friend</strong>
+      <p>I'm glad you're in this world, Love. Here's to another year of memories and madness!</p>
+    </article>
+  </div>
+</section>
+
+<section class="final">
+  <div style="font-size:42px">🌙 🌿 ✨</div>
+  <h2>Keep blooming, Love.</h2>
+  <p>
+    The world needs more people who stop to admire the flowers,
+    smile at the sunshine, and find magic in ordinary things.
+    Never stop being one of them.
+  </p>
+  <p class="serif" style="font-size:22px;color:#f8d9c8">
+    Happiest birthday, bestie! <span class="heart">♥</span>
+  </p>
+  <div style="font-size:25px;margin-top:25px">🌷 🦋 🌼 🌱</div>
+  <footer>CRAFTED WITH 💚 JUST FOR LOVE · 12.10</footer>
+</section>
+
+<script>
+let alreadyCut = false;
+
+const birthdayWishes = [
+  "May your life always bloom with happiness, laughter, and beautiful little moments. 🌷",
+  "May every dream you plant grow into something beautiful. Happy birthday! 🌱",
+  "Stay wild, stay kind, and keep finding magic in the little things. 🦋",
+  "Wishing you sunshine after every storm and a thousand reasons to smile. ☀️",
+  "You're one of nature's lovely little miracles. Never forget that. 💚"
+];
+
+function cutCake() {
+  if (alreadyCut) {
+    document.getElementById('popup').classList.add('show');
+    return;
+  }
+
+  alreadyCut = true;
+  document.getElementById('flame').style.display = 'none';
+  document.getElementById('cake').classList.add('cake-cut');
+  document.getElementById('cutBtn').textContent = '🎉 Celebrate again!';
+  document.getElementById('hint').textContent = 'BOOOOM! THIS ONE IS FOR YOU, LOVE! 💚';
+
+  document.getElementById('celebration').classList.add('active');
+  document.getElementById('popupWish').textContent =
+    birthdayWishes[Math.floor(Math.random() * birthdayWishes.length)];
+
+  launchConfetti();
+  launchBalloons();
+
+  setTimeout(() => {
+    document.getElementById('popup').classList.add('show');
+  }, 500);
+}
+
+function launchConfetti() {
+  const area = document.getElementById('celebration');
+  const colors = ['#ff7c98','#ffd166','#8fcf9b','#a7b8ff','#f8f1d4','#d5a6ff'];
+
+  for (let i = 0; i < 180; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDuration = (2.5 + Math.random() * 4) + 's';
+    piece.style.animationDelay = Math.random() * 1.8 + 's';
+    piece.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+    area.appendChild(piece);
+    setTimeout(() => piece.remove(), 8500);
+  }
+}
+
+function launchBalloons() {
+  const area = document.getElementById('celebration');
+  const balloons = ['🎈','🎈','💚','🎈','🎈','🌸','🎈','🎈'];
+
+  balloons.forEach((emoji, i) => {
+    const balloon = document.createElement('div');
+    balloon.className = 'balloon';
+    balloon.textContent = emoji;
+    balloon.style.left = (5 + Math.random() * 90) + '%';
+    balloon.style.animationDuration = (5 + Math.random() * 4) + 's';
+    balloon.style.animationDelay = (Math.random() * 2) + 's';
+    area.appendChild(balloon);
+    setTimeout(() => balloon.remove(), 10500);
+  });
+}
+
+function closePopup() {
+  document.getElementById('popup').classList.remove('show');
+}
+
+document.getElementById('cake').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    cutCake();
+  }
+});
+</script>
+</body>
+</html>
